@@ -20,8 +20,10 @@ Github repsitory [TEAM PROFILE BUILDER](https://github.com/mark-artim/TeamProfil
 
 ## Usage
 
-See the README Generator in action in this how to video: [INSTRUCTIONAL VIDEO](https://drive.google.com/file/d/1tACvwvBS-AgotN8mTW3hDwd2mv1XhlHf/view)
-
+See the README Generator in action in this how to video:<br><br>
+[INSTRUCTIONAL VIDEO - USING THE TOOL](https://drive.google.com/file/d/1CPtD7fSp0LLHj9SnUJgAd7HeH9RpC2MI/view)
+<br><br>
+[INSTRUCTIONAL VIDEO - UNIT TESTS](https://drive.google.com/file/d/1CPtD7fSp0LLHj9SnUJgAd7HeH9RpC2MI/view)
 
 ## Credits
 Mim Armand for teaching me how all this works.
