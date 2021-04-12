@@ -136,20 +136,14 @@ function addEmp() {
         ei = response.engorint;
         if (ei==="Engineer") {
             const emp = new Eng("eng",response.name,response.id,response.email,response.gitorschool);
-            // console.log("emp: "+emp)
             employees.push(JSON.stringify(emp));
-            console.log("employees array: "+employees);
         } else {
             const emp = new Int("int",response.name,response.id,response.email,response.gitorschool);
-            // console.log("emp: "+emp)
             employees.push(JSON.stringify(emp));
-            console.log("employees array: "+employees);
         }
         if (ae === "Yes") {
-            // console.log("add employees: "+ae);
             addEmp();
         } else {
-            // console.log("employees: "+employees);
             console.log("End of data entry.");
             makeHeader(employees);
         }
@@ -159,7 +153,7 @@ function addEmp() {
 }
 
 function makeHeader(employees) {
-    console.log("in makeHeader");
+    // console.log("in makeHeader");
     const content =
 `<!DOCTYPE html>
 <html lang="en">
@@ -179,18 +173,18 @@ function makeHeader(employees) {
     `;
 
     fs.writeFile('index.html', content, (err) =>
-    err ? console.error(err) : console.log('Index.html created! (Header)'))
+    err ? console.error(err) : console.log('Index.html created'))
     makeEmps(employees);
 };
 
 function makeEmps(employees) {
 // Add Employye cards
-    console.log("Entering makeEmps");
+    // console.log("Entering makeEmps");
     var html = 
 `<div class="card-deck">
 `;
     for(i=0; i < employees.length; i++) {
-        console.log("In the loop! "+i);
+        // console.log("In the loop! "+i);
         var title = JSON.parse(employees[i]).type;
         var name = JSON.parse(employees[i]).name;
         var id = JSON.parse(employees[i]).id;
@@ -207,7 +201,7 @@ function makeEmps(employees) {
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
             <h2 class="card-header">${name}</h2>
             <div class="card-body">
-                <h3 class="card-title">${role}</h3>
+                <h3 class="card-title"><span style="color: white;"><i class="fas fa-mug-hot"></i></span> ${role}</h3>
                 <p>Employee ID: ${id}</p>
                 <a href="mailto:${email}" class="text-white"> Email: ${email}</a><br>
                 <p>Office Number: ${ofcnum}</p>
@@ -224,7 +218,7 @@ function makeEmps(employees) {
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
             <h2 class="card-header">${name}</h2>
             <div class="card-body">
-                <h3 class="card-title">${role}</h3>
+                <h3 class="card-title"><span style="color: white;"><i class="fas fa-code"></i></span> ${role}</h3>
                 <p>Employee ID: ${id}</p>
                 <a href="mailto:${email}" class="text-white"> Email: ${email}</a><br>
                 <a href="https://github.com/"${github} class="text-white"> Github: ${github}</a>
@@ -241,7 +235,7 @@ function makeEmps(employees) {
         <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
             <h2 class="card-header">${name}</h2>
             <div class="card-body">
-                <h3 class="card-title">${role}</h3>
+                <h3 class="card-title"><span style="color: white;"><i class="fas fa-user-graduate"></i></span> ${role}</h3>
                 <p>Employee ID: ${id}</p>
                 <a href="mailto:${email}" class="text-white"> Email: ${email}</a><br>
                 <p>School: ${school}</p>
@@ -251,26 +245,25 @@ function makeEmps(employees) {
     `;
                 break;
             default:
-                console.log("Empty Case Statement! Oy.")
+                console.log("Empty Case Statement.")
         }
-        html = html + content;
-        // console.log(html);        
+        html = html + content;      
     };
     html = html + `
     </div>`;
-    fs.appendFile('index.html', html, (err) =>
-        err ? console.error(err) : console.log('Employee appended!'))
-        makeFooter();
-}
-function makeFooter() {
+
 //Add ending HTML
     const contentEnd =
 `   
+    <script src="https://kit.fontawesome.com/d10a34311c.js" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>
 </html>`;
-    fs.appendFile('index.html', contentEnd, (err) =>
-    err ? console.error(err) : console.log('Footer appended!'))
+
+    html = html + contentEnd;
+
+    fs.appendFile('index.html', html, (err) =>
+    err ? console.error(err) : console.log('HTML text has been written'))
 };
 
 
