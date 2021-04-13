@@ -5,7 +5,10 @@
 This command line, javascript program prompts for information about a new dev team and then creates an HTML file named index.html that is appropriately formatted. Once created you could copy the file to the correct directory and modify if necessary.   
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-        
+
+Sample of the generated Team page:<br><br>
+![Team Sample](/src/screenshot.jpg)
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -23,7 +26,7 @@ Github repsitory [TEAM PROFILE BUILDER](https://github.com/mark-artim/TeamProfil
 See the README Generator in action in this how to video:<br><br>
 [INSTRUCTIONAL VIDEO - USING THE TOOL](https://drive.google.com/file/d/1CPtD7fSp0LLHj9SnUJgAd7HeH9RpC2MI/view)
 <br><br>
-[INSTRUCTIONAL VIDEO - UNIT TESTS](https://drive.google.com/file/d/1CPtD7fSp0LLHj9SnUJgAd7HeH9RpC2MI/view)
+[INSTRUCTIONAL VIDEO - UNIT TESTS](https://drive.google.com/file/d/1zyZAsCi0N-Z7Z3-FkGsuJWB1E_WcpXKe/view)
 
 ## Credits
 Mim Armand for teaching me how all this works.

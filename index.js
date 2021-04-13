@@ -171,9 +171,33 @@ function makeHeader(employees) {
         </div>
     </div>
     `;
+    var path = '';
+    // const directory = path.join(__dirname, '/dist');
+    try {
+        if (fs.existsSync("./dist")) {
+          console.log("Directory exists.")
+        } else {
+            fs.mkdir("./dist", (err) => {
+                if (err) {
+                throw err;
+                } 
+            console.log("Directory did not exist.");
+            })
+        };
+      } catch(e) {
+        console.log("An error occurred when checking for /dist.");
+      };
+    
+    // if (!fs.existsSync(directory)) {
+    //     fs.mkdir(directory, (err) => {
+    //         if (err) {
+    //             throw err;
+    //         }
+    //     })
+    // }
 
-    fs.writeFile('index.html', content, (err) =>
-    err ? console.error(err) : console.log('Index.html created'))
+    fs.writeFile('./dist/index.html', content, (err) =>
+    err ? console.error(err) : console.log('Index.html header created'))
     makeEmps(employees);
 };
 
@@ -262,8 +286,8 @@ function makeEmps(employees) {
 
     html = html + contentEnd;
 
-    fs.appendFile('index.html', html, (err) =>
-    err ? console.error(err) : console.log('HTML text has been written'))
+    fs.appendFile('./dist/index.html', html, (err) =>
+    err ? console.error(err) : console.log('HTML text has been appended'))
 };
 
 
